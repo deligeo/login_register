@@ -60,9 +60,9 @@ function isActiveForm($formName, $activeForm) {
               <label><input type="radio" name="gender" value="male" required> Male</label>
               <label><input type="radio" name="gender" value="female"> Female</label>
             </div>
-        <input type="age" name="age" placeholder="Age" required>
-        <input type="phone" name="phone" placeholder="Phone Number" required>
-        <input type="address" name="address" placeholder="Address" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="address" placeholder="Address" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
         
