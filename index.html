@@ -21,14 +21,26 @@
     <div class="form-box" id="register-form">
       <form action="">
         <h2>Register</h2>
-        <input type="text" name="name" placeholder="name" required>
+        <select name="school" required>
+          <option value="">--Select School--</option>
+          <option value="school1">Rajagiri Public School, Kochi</option>
+          <option value="school2">Chinmaya Vidyalaya, Kochi</option>
+          <option value="school3">St. Mary's School, Kochi</option>
+        </select>
+        <input type="text" name="name" placeholder="Name" required>
+        
+            <!-- Gender Field -->
+            <div class="gender-box">
+              <label class="gender-label">Gender:</label>
+              <label><input type="radio" name="gender" value="male" required> Male</label>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
+        <input type="age" name="age" placeholder="Age" required>
+        <input type="phone" name="phone" placeholder="Phone Number" required>
+        <input type="address" name="address" placeholder="Address" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
-        <select name="role" required>
-          <option value="">--Select Role--</option>
-          <option value="admin">Admin</option>
-          <option value="user">User</option>
-        </select>
+        
         <button type="submit" name="register">Register</button>
         <p>Already have an account? <a href="#" onclick="showForm('login-form')">Login</a></p>
       </form>
