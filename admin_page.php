@@ -74,6 +74,36 @@ if($result->num_rows >0) {
       <button type="submit" name="add-school">Add School</button>
     </form>
   </div>
-  
+
+  <!-- Display Schools -->
+   <div class="all-schools">
+      <table>
+    <h2>School List</h2>
+    <?php if(count($schools) > 0):?>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>School Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Pincode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($schools as $school): ?>
+            <tr>
+              <td><?php echo $school['id']; ?></td>
+              <td><?php echo $school['school_name']; ?></td>
+              <td><?php echo $school['address']; ?></td>
+              <td><?php echo $school['phone']; ?></td>
+              <td><?php echo $school['pincode']; ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    <?php else: ?>
+      <p>No schools registered yet.</p>
+    <?php endif; ?>
+   </div>
 </body>
 </html>
