@@ -58,7 +58,9 @@ if($result->num_rows >0) {
 </head>
 <body>
   <h1>Welcome, Admin</h1>
-
+  <!-- Logout Button -->
+  <button onclick="window.location.href='logout.php'">Logout</button>
+  
   <!-- Add School Form -->
   <div class="adding-school">
     <?php if($message): ?>
