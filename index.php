@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once 'config.php';
 
 $errors = [
   'login' => $_SESSION['login_error'] ?? '',
@@ -8,6 +9,9 @@ $errors = [
 ];
 
 $activeForm = $_SESSION['active_form'] ?? 'login';
+
+$query = "SELECT id, school_name FROM schools ORDER BY school_name ASC";
+$school_result = $conn->query($query);
 
 session_unset();
 
@@ -46,11 +50,21 @@ function isActiveForm($formName, $activeForm) {
       <form action="login_register.php" method="post">
         <h2>Register</h2>
         <?= showError($errors['register']); ?>
-        <select name="school" required>
+        <!-- <select name="school" required>
           <option value="">--Select School--</option>
           <option value="school1">Rajagiri Public School, Kochi</option>
           <option value="school2">Chinmaya Vidyalaya, Kochi</option>
           <option value="school3">St. Mary's School, Kochi</option>
+        </select> -->
+        <select name="school" required>
+          <option value="">--Select School--</option>
+          <?php 
+          if ($school_result && $school_result->num_rows > 0) {
+              while($row = $school_result->fetch_assoc()) {
+                  echo "<option value='" . $row['id'] . "'>" . $row['school_name'] . "</option>";
+              }
+          }
+          ?>
         </select>
         <input type="text" name="name" placeholder="Name" required>
         
