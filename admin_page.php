@@ -60,7 +60,7 @@ if($result->num_rows >0) {
   <h1>Welcome, Admin</h1>
   <!-- Logout Button -->
   <button onclick="window.location.href='logout.php'">Logout</button>
-  
+
   <!-- Add School Form -->
   <div class="adding-school">
     <?php if($message): ?>
@@ -99,6 +99,11 @@ if($result->num_rows >0) {
               <td><?php echo $school['address']; ?></td>
               <td><?php echo $school['phone']; ?></td>
               <td><?php echo $school['pincode']; ?></td>
+              <td>
+                <a href="view_students.php?school_id=<?php echo $school['id']; ?>">
+                    <button>View Students</button>
+                </a>
+            </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
